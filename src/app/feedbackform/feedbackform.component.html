@@ -1,15 +1,28 @@
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Ввод">
-  </mat-form-field>
+<div class="feedback-container">
+  <div style="height:10px;">
+    <mat-progress-bar *ngIf="hasProgress" mode="indeterminate" color="warn"></mat-progress-bar>
+  </div>
+  
+  <h3 class="feed-title">Оставьте заявку</h3>
+  <p class="feed-desc">И получите консультацию специалиста уже сейчас!</p>
+  <div class="form-container">
+      <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+          <div class="example-container">
+          <mat-form-field>
+              <input matInput placeholder="Имя" formControlName="name">
+            </mat-form-field>
 
-  <mat-form-field>
-    <textarea matInput placeholder="Текстовое поле"></textarea>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="Выбор из списка">
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-  </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="e-mail" formControlName="email">
+            </mat-form-field>
+          
+            <mat-form-field>
+                <input matInput placeholder="Телефон" formControlName="phone" required>
+            </mat-form-field>
+            
+      
+          </div>
+          <button mat-flat-button color="warn" type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+      </form>
+  </div>
 </div>
