@@ -12,12 +12,17 @@ import {
   MatOptionModule, 
   MatSelectModule, 
   MatInputModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatCardModule
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SolutionsComponent } from './solutions/solutions.component';
 import { InfoComponent } from './info/info.component';
+import { PhoneNumberComponent } from './phone-number/phone-number.component';
+import { LogoComponent } from './logo/logo.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,11 @@ import { InfoComponent } from './info/info.component';
     HeaderComponent,
     FooterComponent,
     SolutionsComponent,
-    InfoComponent
+    InfoComponent,
+    PhoneNumberComponent,
+    LogoComponent,
+    FeedbackComponent,
+    HowItWorksComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,8 @@ import { InfoComponent } from './info/info.component';
     MatSelectModule,
     MatInputModule,
     MatProgressBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

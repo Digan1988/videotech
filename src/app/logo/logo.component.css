@@ -1,0 +1,12 @@
+.logo-h{
+    color: black;
+    font-size: 25pt;
+    text-align: center;
+    margin: 0;
+    padding: 6px;
+}
+
+.logo-container{
+    background-color: white;
+    height: 100%;
+}

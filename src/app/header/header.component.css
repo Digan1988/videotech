@@ -1,7 +1,7 @@
 .header-container{
     display: block;
-    height: 100px;
-    padding-top: 10px;
+    height: 50px;
+    padding-top: 0;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -11,4 +11,10 @@
     -ms-flex-align: center;
     align-items: center;
     background-color: #005db2;
+    color: white;
+    border: 1px #005db2 solid;
+}
+.phone-container{
+    float: right;
+    padding-right: 30px;
 }

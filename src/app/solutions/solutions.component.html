@@ -1,3 +1,14 @@
 <div class="solutions-container">
-    Готовые решения
+    <h2 class="solutions-container-h">КАКИЕ ЗАДАЧИ РЕШАЕТ ВИДЕОНАБЛЮДЕНИЕ?</h2>
+    <div *ngFor="let item of items; let i = index" class="task-list">
+        <div>
+            <div class="ico-img" [ngClass]="item.ico">
+
+            </div>
+            <div class="task-txt">
+                <h3>{{item.title}}</h3>
+                <p class="task-p">{{item.subtitle}}</p>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,16 @@
+.how-it-works-container{
+    height: 500px;
+}
+
+.how-it-works-img{
+    background-image: url('/assets/img/work.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.how-it-works-h{
+    text-align: center;
+    color: black;
+    font-size: 40pt;
+}
