@@ -1,5 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +25,8 @@ import { LogoComponent } from './logo/logo.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
+import { MailerService } from './mailer.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,8 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     HowItWorksComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'videotech' }),
+    BrowserTransferStateModule,
     BrowserAnimationsModule,
     MatButtonModule, 
     MatCheckboxModule,
@@ -48,9 +52,10 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     MatInputModule,
     MatProgressBarModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MailerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

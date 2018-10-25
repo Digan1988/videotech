@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MailerService } from '../mailer.service';
 
 @Component({
   selector: 'app-feedbackform',
@@ -13,14 +14,16 @@ export class FeedbackformComponent implements OnInit {
     email: new FormControl('', [Validators.email])
   });
   hasProgress: boolean = false;
-  constructor() { }
+  constructor(private mailer: MailerService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.feedbackForm.value);
+    //console.warn(this.feedbackForm.value);
+
+    this.mailer.Send(this.feedbackForm.value);
 
     if(this.feedbackForm.valid){
       this.hasProgress = true;
