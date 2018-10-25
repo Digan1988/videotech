@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class MailerService {
 
   constructor(private http: HttpClient) { }
-  Send = (message: any) => {
+  Send = (message: any, callback: (success: boolean) => void) => {
     
       const httpOptions = {
         headers: new HttpHeaders({
@@ -17,8 +17,10 @@ export class MailerService {
 
       let body = `name=${message.name}&phone=${message.phone}&email=${message.email}`;
 
-      this.http.post('/sendMessage', body, httpOptions).subscribe((data) => {
-         console.log('mailer', data);
+      this.http.post('/sendMessage', body, httpOptions).subscribe(value => {
+         callback(true);
+      }, error => {
+          callback(false);
       });
   }
 }

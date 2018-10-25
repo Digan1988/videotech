@@ -14,7 +14,8 @@ import {
   MatSelectModule, 
   MatInputModule,
   MatProgressBarModule,
-  MatCardModule
+  MatCardModule,
+  MatSnackBarModule
 } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -51,6 +52,7 @@ import { MailerService } from './mailer.service';
     MatSelectModule,
     MatInputModule,
     MatProgressBarModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule
