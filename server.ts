@@ -53,37 +53,37 @@ app.get('*', (req, res) => {
 });
 
 app.post('/sendMessage', (req, res) => {
-  let body = req.body;
-  let name = body.name || 'Не указано';
-  let phone = body.phone;
-  let email = body.email || 'Не указан';
-  var nodemailer = require('nodemailer');
+    let body = req.body;
+    let name = body.name || 'Не указано';
+    let phone = body.phone;
+    let email = body.email || 'Не указан';
+    let nodemailer = require('nodemailer');
 
-  var transporter = nodemailer.createTransport({
-    //service: 'gmail',
-    host: "smtp.yandex.ru",
-    port:465,
-    secure: true,
-    auth: {
-      user: 'videotech.5mtp@yandex.ru',
-      pass: 'ugTXMO'
-    }
-  });
-  
-  var mailOptions = {
-    from: 'videotech.5mtp@yandex.ru',
-    to: 'digan88@mail.ru',
-    subject: 'Новая заявка!',
-    text: `Имя: ${name} Телефон: ${phone} E-mail: ${email}`
-  };
-  
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-      res.status(500).json({ error: error });
-    } else {
-      res.status(200).json({ message: `Email sent: ${info.response}` });
-    }
-  });
+    let transporter = nodemailer.createTransport({
+      //service: 'gmail',
+      host: "smtp.yandex.ru",
+      port:465,
+      secure: true,
+      auth: {
+        user: 'videotech.5mtp@yandex.ru',
+        pass: 'ugTXMO'
+      }
+    });
+    
+    let mailOptions = {
+      from: 'videotech.5mtp@yandex.ru',
+      to: 'digan88@mail.ru',
+      subject: 'Новая заявка!',
+      text: `Имя: ${name} Телефон: ${phone} E-mail: ${email}`
+    };
+    
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        res.status(500).json({ error: error });
+      } else {
+        res.status(200).json({ message: `Email sent: ${info.response}` });
+      }
+    });
 });
 
 // Start up the Node server
